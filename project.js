@@ -131,7 +131,7 @@ function afterX(numbers, x) {
  */
 function abbreviate(firstName, lastName) {
   // Your code here
-  return `${firstName[0].toUpperCase()}${lastName.toUpperCase()}`;
+  return `${firstName[0].toUpperCase()}${lastName[0].toUpperCase()}`;
 }
 
 /**
@@ -178,6 +178,10 @@ function elementInArray(numbers, x) {
  */
 function reverseString(string) {
   // Your code here
+  let split = string.split("");
+  let reverse = split.reverse();
+  let join = reverse.join("");
+  return join;
 }
 
 console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
