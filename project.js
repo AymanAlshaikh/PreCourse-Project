@@ -20,6 +20,11 @@
  */
 function sumOdds(numbers) {
   // Your code here
+  let sum = 0;
+  let nums = [];
+  nums = numbers.forEach (num => {if(num % 2 !== 0) return sum=sum+num;})
+  
+  return sum;
 }
 
 /**
@@ -36,6 +41,10 @@ function sumOdds(numbers) {
  */
 function characterCount(string, c) {
   // Your code here
+  let count = 0;
+  //count = string.filter (element => {return element.toLowerCase() === c.toLowerCase()})
+  for (let i=0; i<=string.length; i++) if (string.toLowerCase()[i]===c) count++ 
+  return count;
 }
 
 /**
@@ -55,6 +64,11 @@ function characterCount(string, c) {
  */
 function differences(numbers) {
   // Your code here
+  let diffs = [];
+  for (let i=1; i<numbers.length; i++){
+    diffs.push(numbers[i]-numbers[i-1])
+  }
+  return diffs;
 }
 
 /**
@@ -75,6 +89,11 @@ function differences(numbers) {
  */
 function largestIncrement(numbers) {
   // Your code here
+  let diffs = [];
+  for (let i=1; i<numbers.length; i++){
+    diffs.push(numbers[i]-numbers[i-1])
+  }
+  return Math.max(...diffs);
 }
 
 /**
@@ -90,6 +109,13 @@ function largestIncrement(numbers) {
  */
 function afterX(numbers, x) {
   // Your code here
+  let num=0;
+  for (let i=0; i<numbers.length; i++){
+    if (numbers[i]===x)
+    num=i;
+  }
+  const arr=numbers.slice(num+1)
+  return arr;
 }
 
 /**
@@ -105,6 +131,7 @@ function afterX(numbers, x) {
  */
 function abbreviate(firstName, lastName) {
   // Your code here
+  return `${firstName[0].toUpperCase()}${lastName.toUpperCase()}`;
 }
 
 /**
@@ -119,6 +146,8 @@ function abbreviate(firstName, lastName) {
  */
 function isUpperCase(string) {
   // Your code here
+  if (string === string.toUpperCase()) return true
+  else return false;
 }
 
 /**
@@ -133,6 +162,8 @@ function isUpperCase(string) {
  */
 function elementInArray(numbers, x) {
   // Your code here
+  if(numbers.includes(x)) return true
+  else return false;
 }
 
 /**
@@ -149,15 +180,15 @@ function reverseString(string) {
   // Your code here
 }
 
-// console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
-// console.log(characterCount("Character Count is clever", "c"));
-// console.log(differences([11, 35, 52, 14, 56]));
-// console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
-// console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
-// console.log(abbreviate("miss", "Stephane"));
-// console.log(isUpperCase("JCREW"));
-// console.log(elementInArray([5, 6, 7], 8));
-// console.log(reverseString("CODED"));
+console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
+console.log(characterCount("Character Count is clever", "c"));
+console.log(differences([11, 35, 52, 14, 56]));
+console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
+console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+console.log(abbreviate("miss", "Stephane"));
+console.log(isUpperCase("JCREW"));
+console.log(elementInArray([5, 6, 7], 8));
+console.log(reverseString("CODED"));
 
 module.exports = {
   sumOdds,
